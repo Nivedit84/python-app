@@ -16,3 +16,10 @@ jobs:
         continue-on-error: true
         with:
           src: ./src
+  secret_scanning:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v3.0.0
