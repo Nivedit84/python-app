@@ -28,7 +28,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
   unit_test:
-    runs_on: self-hosted
+    runs-on: self-hosted
     needs: [linting, secret_scanning]
     steps:
       - name: Checkout repo
