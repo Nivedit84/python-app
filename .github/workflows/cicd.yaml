@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   ci:
-    uses: Nivedit84/actions-1/.github/workflows/ci.yaml
+    uses: Nivedit84/actions-1/.github/workflows/ci.yaml@main
     with:
       python-version: "3.14"
       source-directory: "src"
