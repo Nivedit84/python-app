@@ -27,3 +27,18 @@ jobs:
         uses: gitleaks/gitleaks-action@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN  }}
+  unit_test:
+    runs_on: self-hosted
+    needs: [linting, secret_scanning]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+      - name: Run unit test
+        run: echo "Running unit tests.."
+      - name: Generate code coverage
+        run: echo "Code coverage..."
+      # - name: Upload as pipeline artifact
+      #   uses: actions/upload-artifact@v7.0.1
+        # with:
+        #   - name: Code Coverage
+        #     path: Sample path
